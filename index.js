@@ -13,6 +13,7 @@ import connectToMongo from "./database/db.js";
 const app= express();
 app.use(express.json());
 app.use(cors());
+connectToMongo()
 //# abailable routes
 app.use("/api/auth", authRoutes);
 app.use("/api/books", bookRoutes);
