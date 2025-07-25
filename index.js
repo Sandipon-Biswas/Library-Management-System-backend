@@ -12,7 +12,10 @@ import connectToMongo from "./database/db.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://library-management-system-frontend-mu.vercel.app"
+}));
+
 
 // 👇 Main async function to start everything after DB connects
 const startServer = async () => {
