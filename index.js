@@ -13,7 +13,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://library-management-system-frontend-mu.vercel.app"
+  origin: [
+    "http://localhost:5173",
+    "https://library-management-system-frontend-mu.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
 }));
 
 
