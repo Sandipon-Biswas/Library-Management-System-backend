@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-
+mongoose.set('bufferCommands', false);
 const connectToMongo = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 10000, // 10 sec timeou
+    
     });
     console.log("✅ MongoDB Connected");
   } catch (err) {
