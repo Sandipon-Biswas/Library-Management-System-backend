@@ -12,15 +12,13 @@ import connectToMongo from "./database/db.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://library-management-system-frontend-mu.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
-}));
+import cors from "cors";
 
+
+app.use(cors({
+  origin: "https://cerulean-dragon-a79d33.netlify.app", // frontend URL
+  credentials: true, // যদি কুকি বা টোকেন পাঠাও
+}));
 
 // 👇 Main async function to start everything after DB connects
 const startServer = async () => {
