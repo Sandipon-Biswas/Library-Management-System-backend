@@ -15,11 +15,7 @@ app.use(express.json());
 import cors from "cors";
 
 
-app.use(cors({
-  origin: "https://cerulean-dragon-a79d33.netlify.app", // frontend URL
-  credentials: true, // যদি কুকি বা টোকেন পাঠাও
-}));
-
+app.use(cors());
 // 👇 Main async function to start everything after DB connects
 const startServer = async () => {
   try {
